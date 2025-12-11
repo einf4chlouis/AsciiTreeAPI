@@ -1,7 +1,7 @@
 
-# 🌲 API-Webtech: ASCII-Baum Generator
+# 🌲 ASCII-Baum Generator
 
-> **Eine moderne Node.js-API, die wunderschöne ASCII-Bäume generiert – flexibel, schnell & cloud-ready!**
+> **Eine moderne Node.js-API, die wunderschöne ASCII-Bäume generiert – flexibel & relativ schnell!**
 
 ---
 
@@ -10,8 +10,7 @@
 • REST-API mit Express
 • Flexible Parameter für Höhe & Breite
 • Komprimierte Auslieferung (gzip, optional)
-• Sicher (Helmet), CORS-fähig
-• Bereit für Cloudflare Tunnel & Public Web
+• Bereit für Cloudflare Tunnel
 
 ---
 
@@ -67,3 +66,4 @@ Für 300 Requests mit `height: 5000` und `width: 11111`:
 ## ℹ️ Hinweise
 
 - Die API gibt den ASCII-Baum als reinen Text zurück.
+- Die API läuft jetzt hinter einem Cloudflare Tunnel für die Daten der Grafik lief die Api Local auf einem Rechner.
