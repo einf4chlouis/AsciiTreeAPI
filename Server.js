@@ -1,19 +1,15 @@
 import express from 'express';
-import cors from 'cors';
-import helmet from 'helmet';
 import compression from 'compression';
 import zlib from 'zlib';
 import bodyParser from 'body-parser';
 import { generateAsciiTree } from './Endpoints/genTree.js';
 
 const app = express();
-app.use(cors());
-app.use(compression({ level: zlib.constants.Z_DEFAULT_SPEED }));
-app.use(helmet());
+app.use(compression(); // default Kopression (Kompression macht nur ab bestimten größen wirklich sin aber ich will traffic spaaren ;)
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
-const PORT = 443;
+const PORT = 443; // für nicht Root Prozesse sudo setcap 'cap_net_bind_service=+ep' /usr/bin/node sonst können keine Ports unter 1024 genutzt werden!!!!!!!!!!!!!!!! 
 
 
 app.post('/v1/tree', (req, res) => {
@@ -31,3 +27,4 @@ app.post('/v1/tree', (req, res) => {
 app.listen(PORT, () => {
   console.log(`HTTP Server läuft auf Port ${PORT}`);
 });
+
